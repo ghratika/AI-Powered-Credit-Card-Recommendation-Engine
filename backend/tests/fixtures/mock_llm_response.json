@@ -1,0 +1,28 @@
+{
+  "recommendations": [
+    {
+      "rank": 1,
+      "card_id": "axis-ace",
+      "card_name": "Axis Bank ACE Credit Card",
+      "confidence_score": 0.91,
+      "net_annual_benefit_inr": 14500,
+      "explanation": "Your utilities spend is high; ACE offers 5% on bill pay in that category."
+    },
+    {
+      "rank": 2,
+      "card_id": "axis-flipkart",
+      "card_name": "Axis Bank Flipkart Credit Card",
+      "confidence_score": 0.84,
+      "net_annual_benefit_inr": 9200,
+      "explanation": "Strong shopping volume suits Flipkart partner cashback."
+    },
+    {
+      "rank": 3,
+      "card_id": "axis-vistara",
+      "card_name": "Axis Bank Vistara Credit Card",
+      "confidence_score": 0.78,
+      "net_annual_benefit_inr": 11000,
+      "explanation": "Travel spend supports accelerated Vistara rewards."
+    }
+  ]
+}

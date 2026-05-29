@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Credit Card Advisor - Account Connected</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#0d1c32",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-container": "#d2e0fe",
+                        "on-primary-fixed-variant": "#832600",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "primary-container": "#ff6b35",
+                        "on-tertiary-container": "#003a25",
+                        "surface": "#f9f9ff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-primary-container": "#5f1900",
+                        "primary-fixed": "#ffdbd0",
+                        "surface-dim": "#d3daea",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#e1bfb5",
+                        "background": "#f9f9ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#55637d",
+                        "primary": "#ab3500",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#dce2f3",
+                        "inverse-primary": "#ffb59d",
+                        "surface-container-low": "#f0f3ff",
+                        "primary-fixed-dim": "#ffb59d",
+                        "error": "#ba1a1a",
+                        "on-background": "#151c27",
+                        "surface-tint": "#ab3500",
+                        "secondary-fixed": "#d6e3ff",
+                        "outline": "#8d7168",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#dce2f3",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-tertiary-fixed": "#002113",
+                        "surface-container-high": "#e2e8f8",
+                        "surface-bright": "#f9f9ff",
+                        "secondary": "#515f78",
+                        "inverse-surface": "#2a313d",
+                        "tertiary-container": "#00af79",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "on-surface-variant": "#594139",
+                        "on-primary-fixed": "#390c00",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#006c49"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["DM Sans"],
+                        "headline-lg-mobile": ["DM Sans"],
+                        "headline-md": ["DM Sans"],
+                        "body-md": ["DM Sans"],
+                        "body-lg": ["DM Sans"],
+                        "label-md": ["DM Sans"],
+                        "button-text": ["DM Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "button-text": ["16px", {"lineHeight": "20px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm dark:shadow-none docked full-width top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="account_balance">account_balance</span>
+<span class="text-headline-md font-headline-md font-bold text-secondary dark:text-secondary-fixed">Credit Card Advisor</span>
+</div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-label-md font-label-md text-primary font-bold" href="#">Profile</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:bg-surface-variant transition-colors px-3 py-2 rounded-lg" href="#">Browse Cards</a>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<!-- Hero / Context Section -->
+<section class="mb-stack-lg">
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg mb-stack-sm text-on-surface">Optimize Your Spending</h1>
+<p class="text-body-lg text-secondary max-w-2xl">We've updated your financial profile. Based on your Account Aggregator data, we can now provide high-precision credit card matches.</p>
+</section>
+<!-- Main Form/Bento Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: User Profile Form -->
+<div class="lg:col-span-7 flex flex-col gap-stack-md">
+<div class="bg-white p-stack-lg rounded-xl shadow-[0px_4px_12px_rgba(10,25,47,0.05)] border border-outline-variant/30" style="transform: translateY(0px); transition: 0.3s ease-out;">
+<h2 class="text-label-md font-label-md uppercase font-bold text-secondary mb-stack-md tracking-wider">Financial Profile</h2>
+<form class="space-y-stack-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div>
+<label class="block text-label-md font-label-md font-bold text-on-surface mb-1 uppercase">Annual Income</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-secondary font-medium">₹</span>
+<input class="w-full pl-8 pr-4 py-3 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-body-lg font-medium" readonly="" type="text" value="12,00,000">
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md font-bold text-on-surface mb-1 uppercase">Annual Income</label>
+<div class="relative">
+<input class="w-full px-4 py-3 bg-white border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none text-body-lg font-medium" readonly="" type="text" value="Travel &amp; Dining">
+<span class="absolute right-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-secondary" data-icon="restaurant">restaurant</span>
+</div>
+</div>
+</div>
+<!-- Account Aggregator Status: CONNECTED -->
+<div class="p-4 bg-tertiary/10 border border-tertiary-container/30 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-tertiary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+<div>
+<p class="text-body-md font-bold text-tertiary">Connected · demo-user-1</p>
+<p class="text-label-md text-on-surface-variant">Verified via Account Aggregator</p>
+</div>
+</div>
+<button class="text-label-md font-bold text-secondary hover:text-primary transition-colors" type="button">Manage</button>
+</div>
+<div class="pt-stack-sm">
+<button class="w-full md:w-auto px-stack-lg py-4 bg-primary-container text-white font-button-text text-button-text rounded-xl shadow-lg hover:bg-primary transition-all active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
+                                Get Recommendations
+                                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Right Column: Visual Reinforcement -->
+<div class="lg:col-span-5">
+<div class="relative h-full min-h-[300px] rounded-xl overflow-hidden group">
+<img alt="Financial Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end, modern workspace featuring a sleek laptop displaying complex financial charts and credit card icons. The lighting is warm and professional, highlighting a glass of water and a clean, minimalist desk. The overall color palette is dominated by deep blues and vibrant orange accents, creating a sense of growth, accuracy, and sophisticated financial management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0GYwuXvgJ9gl0wFofWlrxH5oHiEEPD6xd_HUJWURjk4lUzpnuPMPH9rNHc56bBlJDBnv9wXRqBWeYMOgidcfzPwEs4oHEN60sYjTPTnCdGpqTFWfmQGIDe7sfWpIPPpnu9u4uTvMWHgah1VACkD3y7blWTk_nyjKTkk-wGA5BrXBy1fM18HTMkN_uVGrhUg0gpfskyWKCJao9jQwJi7-9RuC2fV5R9YuelZ_FXM4lmtmRXqPlSHDiqeGG3luaDMu0m0GhrtCwTu8">
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-on-background/20 to-transparent flex flex-col justify-end p-stack-lg">
+<div class="bg-white/10 backdrop-blur-md p-4 rounded-lg border border-white/20">
+<h3 class="text-white font-bold text-body-lg">Data-Driven Accuracy</h3>
+<p class="text-white/80 text-label-md">Using AA data reduces credit rejection rates by up to 45% by matching your real cash flow to bank requirements.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Info Section -->
+<section class="mt-stack-lg grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container p-stack-md rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="security">security</span>
+<h4 class="font-bold text-on-surface">Privacy First</h4>
+<p class="text-body-md text-secondary">Your AA data is encrypted and used only for recommendation logic.</p>
+</div>
+<div class="bg-surface-container p-stack-md rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="bolt">bolt</span>
+<h4 class="font-bold text-on-surface">Instant Match</h4>
+<p class="text-body-md text-secondary">No manual document uploads required. Everything is automated.</p>
+</div>
+<div class="bg-surface-container p-stack-md rounded-xl border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary mb-2" data-icon="trending_up">trending_up</span>
+<h4 class="font-bold text-on-surface">Credit Score Impact</h4>
+<p class="text-body-md text-secondary">This check is a "soft pull" and does not affect your credit score.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile py-stack-lg text-center flex flex-col items-center gap-stack-sm bg-background border-t border-outline-variant dark:border-outline mt-auto">
+<div class="text-label-md font-label-md text-secondary">
+<span class="material-symbols-outlined align-middle mr-1" data-icon="info" style="font-size: 16px;">info</span>
+            Simulated recommendations for demonstration purposes only.
+        </div>
+<div class="flex gap-4">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Terms of Service</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a>
+</div>
+<div class="mt-2 text-[10px] text-on-surface-variant/60">
+            © 2024 Credit Card Advisor. All rights reserved.
+        </div>
+</footer>
+<!-- Micro-interaction Script -->
+<script>
+        // Simple hover effect for form container
+        const formContainer = document.querySelector('form').closest('div');
+        formContainer.addEventListener('mouseenter', () => {
+            formContainer.style.transform = 'translateY(-2px)';
+            formContainer.style.transition = 'all 0.3s ease-out';
+        });
+        formContainer.addEventListener('mouseleave', () => {
+            formContainer.style.transform = 'translateY(0)';
+        });
+    </script>
+
+
+</body></html>

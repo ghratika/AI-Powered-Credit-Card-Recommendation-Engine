@@ -1,0 +1,44 @@
+Problem Statement
+Problem Statement: AI-Powered Credit Card Recommendation Engine (FreechargeBiz Use Case)
+
+You are tasked with building an AI-powered credit card recommendation service. The system should intelligently suggest the best Axis Bank credit card based on the user's financial profile by combining structured card data with a Large Language Model (LLM).
+
+Objective
+Design and implement an application that:
+● Takes user financial inputs (Income, PAN, Mobile)
+● Uses a curated, structured dataset of Axis Bank credit cards
+● Uses synthetic Account Aggregator (AA) transaction data (supplied by the developer/system to simulate real spending patterns)
+● Leverages an LLM to generate personalized, human-like recommendations and savings simulations
+● Displays clear and useful results to the user
+
+System Workflow
+1. Data Ingestion
+○ Load Axis Bank product data from data/processed/cards.json.
+○ Ingest synthetic transaction data (Account Aggregator payload) provided by the developer/system.
+○ Extract relevant fields such as card name, annual fee, reward categories, APR, etc.
+
+2. User Input
+○ Collect user preferences:
+■ Annual Income
+■ PAN Number
+■ Mobile Number
+■ Account Aggregator Connection (Simulated Trigger)
+
+3. Integration Layer
+○ Filter and prepare relevant credit card data based on user eligibility (Income, CIBIL).
+○ Merge filtered card list with provided AA transaction data.
+○ Pass structured results into an LLM prompt.
+○ Design a prompt that helps the LLM reason, rank options, and simulate reward ROI.
+
+4. Recommendation Engine
+○ Use the LLM to:
+■ Rank credit cards by fit.
+■ Provide explanations (why each recommendation fits the user's specific spending patterns).
+■ Calculate and simulate total annual rewards (net benefit).
+
+5. Output Display
+○ Present top recommendations in a user-friendly format:
+■ Card Name & Image
+■ Confidence Score
+■ Net Annual Benefit (Rewards Simulator)
+■ AI-generated explanation

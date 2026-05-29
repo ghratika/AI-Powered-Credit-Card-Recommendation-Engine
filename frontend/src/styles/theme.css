@@ -1,0 +1,131 @@
+/**
+ * Freecharge / Fintech Momentum design tokens
+ * Single source of truth — aligned with stitch_axis_ai_card_advisor/fintech_momentum/DESIGN.md
+ *
+ * Brand palette:
+ *   Primary (CTA):     #FF6B35
+ *   Secondary (text):  #0A192F
+ *   Background page:   #F8F9FA
+ *   Surface (cards):   #FFFFFF
+ */
+
+:root {
+  /* —— Brand (Freecharge visual identity) —— */
+  --color-primary: #ff6b35;
+  --color-primary-hover: #e85a28;
+  --color-primary-muted: #ffb59d;
+  --color-primary-container: #ff6b35;
+  --color-on-primary: #ffffff;
+
+  --color-secondary: #0a192f;
+  --color-secondary-muted: #515f78;
+  --color-on-secondary: #ffffff;
+  --color-secondary-fixed-dim: #b9c7e4;
+
+  --color-background: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-surface-muted: #f0f3ff;
+  --color-surface-container: #e7eefe;
+
+  --color-on-background: #0a192f;
+  --color-on-surface: #151c27;
+  --color-on-surface-variant: #594139;
+  --color-muted: #6b7280;
+  --color-outline: #e5e7eb;
+  --color-outline-variant: #e1bfb5;
+  --color-border: #e5e7eb;
+  --color-divider: #f1f3f5;
+
+  /* —— Semantic —— */
+  --color-success: #10b981;
+  --color-success-bg: rgba(16, 185, 129, 0.1);
+  --color-error: #ef4444;
+  --color-error-bg: #ffdad6;
+  --color-error-dark: #ba1a1a;
+  --color-tertiary: #006c49;
+  --color-tertiary-container: #00af79;
+  --color-insight-bg: #eef6ff;
+
+  /* AA panel (navy bento) */
+  --color-aa-panel: #0a192f;
+  --color-aa-panel-text: #d6e3ff;
+
+  /* —— Typography —— */
+  --font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+
+  --font-size-headline-lg: 1.875rem;
+  --line-height-headline-lg: 2.375rem;
+  --font-size-headline-md: 1.25rem;
+  --line-height-headline-md: 1.75rem;
+  --font-size-body-lg: 1rem;
+  --line-height-body-lg: 1.5rem;
+  --font-size-body-md: 0.875rem;
+  --line-height-body-md: 1.25rem;
+  --font-size-label: 0.75rem;
+  --line-height-label: 1rem;
+  --font-size-button: 1rem;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* —— Spacing (8px base) —— */
+  --space-base: 8px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --margin-mobile: 16px;
+  --margin-desktop: 32px;
+  --gutter: 16px;
+  --max-content-width: 1200px;
+
+  /* —— Shape —— */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-card: 12px;
+  --radius-button: 12px;
+  --radius-full: 9999px;
+
+  /* —— Elevation (navy-tinted shadows per DESIGN.md) —— */
+  --shadow-soft: 0 4px 12px rgba(10, 25, 47, 0.05);
+  --shadow-active: 0 8px 24px rgba(10, 25, 47, 0.1);
+  --shadow-card: 0 4px 24px rgba(10, 25, 47, 0.06);
+
+  /* —— Motion —— */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+
+  /* —— Z-index —— */
+  --z-header: 50;
+  --z-overlay: 40;
+  --z-toast: 60;
+
+  /* Legacy aliases (used across component CSS) */
+  --fc-orange: var(--color-primary);
+  --fc-navy: var(--color-secondary);
+  --fc-bg: var(--color-background);
+  --fc-white: var(--color-surface);
+  --fc-muted: var(--color-muted);
+  --fc-border: var(--color-border);
+  --fc-success: var(--color-success);
+  --fc-insight-bg: var(--color-insight-bg);
+  --fc-radius: var(--radius-card);
+  --fc-shadow: var(--shadow-card);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-size-headline-lg: 1.875rem;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --font-size-headline-lg: 1.5rem;
+    --line-height-headline-lg: 2rem;
+  }
+}

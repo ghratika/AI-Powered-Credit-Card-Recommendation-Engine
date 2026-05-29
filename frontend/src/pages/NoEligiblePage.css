@@ -1,0 +1,108 @@
+.no-eligible-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background);
+}
+
+.no-eligible-page__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-xl) var(--margin-mobile);
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.no-eligible-page__icon-wrap {
+  width: 120px;
+  height: 120px;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-eligible-page__icon {
+  font-size: 56px;
+  color: var(--color-primary);
+}
+
+.no-eligible-page__title {
+  margin: 0 0 var(--space-md);
+  font-size: var(--font-size-headline-lg);
+  line-height: var(--line-height-headline-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-on-background);
+}
+
+.no-eligible-page__message {
+  margin: 0 0 var(--space-lg);
+  font-size: var(--font-size-body-lg);
+  color: var(--color-on-surface-variant);
+  line-height: var(--line-height-body-lg);
+}
+
+.no-eligible-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.no-eligible-page__btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 40px;
+  font-family: inherit;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+}
+
+.no-eligible-page__btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.no-eligible-page__tip {
+  display: flex;
+  gap: var(--space-sm);
+  text-align: left;
+  padding: var(--space-md);
+  background: var(--color-surface-muted);
+  border: 1px solid color-mix(in srgb, var(--color-outline-variant) 30%, transparent);
+  border-radius: var(--radius-lg);
+  max-width: 28rem;
+}
+
+.no-eligible-page__tip .material-symbols-outlined {
+  color: var(--color-tertiary);
+  flex-shrink: 0;
+}
+
+.no-eligible-page__tip strong {
+  display: block;
+  font-size: var(--font-size-label);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-tertiary);
+  margin-bottom: 4px;
+}
+
+.no-eligible-page__tip p {
+  margin: 0;
+  font-size: var(--font-size-body-md);
+  color: var(--color-secondary-muted);
+}

@@ -1,0 +1,11 @@
+# Railway backend service (monorepo root; includes data/ via Dockerfile)
+# Docs: https://docs.railway.com/guides/fastapi
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/api/v1/health"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"

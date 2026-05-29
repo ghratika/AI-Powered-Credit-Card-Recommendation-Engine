@@ -1,0 +1,54 @@
+.app-footer {
+  margin-top: auto;
+  padding: var(--space-lg) var(--margin-mobile);
+  text-align: center;
+  border-top: 1px solid var(--color-outline-variant);
+  background: var(--color-background);
+}
+
+.app-footer__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary-muted);
+}
+
+.app-footer__brand .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.app-footer__disclaimer {
+  margin: 0 auto var(--space-md);
+  max-width: 28rem;
+  font-size: var(--font-size-body-md);
+  color: var(--color-on-surface-variant);
+  line-height: var(--line-height-body-md);
+}
+
+.app-footer__links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.app-footer__links a {
+  font-size: var(--font-size-label);
+  color: var(--color-on-surface-variant);
+  text-decoration: none;
+}
+
+.app-footer__links a:hover {
+  color: var(--color-primary);
+}
+
+.app-footer__copy {
+  margin: var(--space-sm) 0 0;
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}

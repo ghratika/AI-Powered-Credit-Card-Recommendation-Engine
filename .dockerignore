@@ -1,0 +1,11 @@
+.git
+.github
+**/__pycache__
+**/.pytest_cache
+**/.venv
+**/node_modules
+frontend
+stitch_axis_ai_card_advisor
+docs
+.env
+*.md

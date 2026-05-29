@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #f9f9ff;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#0d1c32",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-container": "#d2e0fe",
+                        "on-primary-fixed-variant": "#832600",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "primary-container": "#ff6b35",
+                        "on-primary-container": "#5f1900",
+                        "primary-fixed": "#ffdbd0",
+                        "surface-dim": "#d3daea",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#e1bfb5",
+                        "background": "#f9f9ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#55637d",
+                        "primary": "#ab3500",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#dce2f3",
+                        "inverse-primary": "#ffb59d",
+                        "surface-container-low": "#f0f3ff",
+                        "primary-fixed-dim": "#ffb59d",
+                        "error": "#ba1a1a",
+                        "on-background": "#151c27",
+                        "surface-tint": "#ab3500",
+                        "secondary-fixed": "#d6e3ff",
+                        "outline": "#8d7168",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#dce2f3",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-tertiary-fixed": "#002113",
+                        "surface-container-high": "#e2e8f8",
+                        "surface-bright": "#f9f9ff",
+                        "secondary": "#515f78",
+                        "inverse-surface": "#2a313d",
+                        "tertiary-container": "#00af79",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "on-surface-variant": "#594139",
+                        "on-primary-fixed": "#390c00",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#006c49"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "12px",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["DM Sans"],
+                        "headline-lg-mobile": ["DM Sans"],
+                        "headline-md": ["DM Sans"],
+                        "body-md": ["DM Sans"],
+                        "body-lg": ["DM Sans"],
+                        "label-md": ["DM Sans"],
+                        "button-text": ["DM Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "button-text": ["16px", {"lineHeight": "20px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm dark:shadow-none docked full-width top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<h1 class="text-headline-md font-headline-md font-bold text-secondary dark:text-secondary-fixed">Credit Card Advisor</h1>
+</div>
+<nav class="hidden md:flex gap-6 items-center">
+<span class="text-label-md font-label-md text-on-surface-variant hover:bg-surface-variant transition-colors cursor-pointer px-3 py-2 rounded-lg">Home</span>
+<span class="text-label-md font-label-md text-primary font-bold hover:bg-surface-variant transition-colors cursor-pointer px-3 py-2 rounded-lg">Advisor</span>
+<span class="text-label-md font-label-md text-on-surface-variant hover:bg-surface-variant transition-colors cursor-pointer px-3 py-2 rounded-lg">History</span>
+<button class="bg-primary-container text-on-primary-container text-button-text font-button-text px-6 py-2 rounded-lg active:opacity-80 active:scale-95 transition-transform">
+                Sign In
+            </button>
+</nav>
+<!-- Mobile Menu Placeholder -->
+<div class="md:hidden">
+<span class="material-symbols-outlined text-secondary">menu</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-margin-mobile md:px-margin-desktop py-12">
+<div class="max-w-xl w-full flex flex-col items-center text-center">
+<!-- Illustration Container with Ambient Glow -->
+<div class="relative w-full max-w-sm mb-stack-lg group">
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl transition-all duration-700 group-hover:bg-primary/10"></div>
+<img alt="No cards found" class="relative z-10 w-full h-auto drop-shadow-xl transform transition-transform duration-500 hover:scale-[1.02]" data-alt="A clean and modern digital illustration of a professional character searching through an empty filing cabinet with a magnifying glass. The scene is set in a bright, high-key office environment using a palette of crisp white, soft grays, and energetic orange accents. The lighting is soft and diffused, creating a friendly and trustworthy corporate fintech aesthetic. The character wears business-casual navy attire, emphasizing a reliable yet contemporary professional tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeEKGiG2LcWG94VkcUffzTYPSFgXhhW0uIizCv2GnVO7bOX_MyvTQlfO7Iq-OX8uCNhV9CV1JSZgFThgwq89M_fStIc_RD2b6kYondPpOLadGNPvWn9k64jwUdIwMYssvLDbYCa2EWzjzcRi6DgS6XLuoT3aCX0P5JVWTpRtSsPH_CDU7qV8rAbXMkp1AyBivpg7dbyRGMHldlvY1PwYU_e3O15i7ZUNxcAg-NHcxYUuJrL1SwMjQjaz8hFX066a_irpwSAQql8iY"/>
+</div>
+<!-- Content Section -->
+<div class="space-y-stack-md z-10">
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-background">
+                    No cards match your profile
+                </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-md mx-auto">
+                    Try adjusting your income or CIBIL score to see more options. Our advisor needs a bit more room to find the perfect financial match for you.
+                </p>
+</div>
+<!-- Action Cluster -->
+<div class="mt-stack-lg flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<button class="bg-primary-container text-on-primary-container text-button-text font-button-text px-10 py-4 rounded-lg shadow-md hover:shadow-lg active:scale-95 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">edit</span>
+                    Edit Profile
+                </button>
+<button class="border-[1.5px] border-secondary text-secondary text-button-text font-button-text px-10 py-4 rounded-lg hover:bg-surface-variant active:scale-95 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">refresh</span>
+                    Clear Filters
+                </button>
+</div>
+<!-- Secondary Insight (Subtle Card) -->
+<div class="mt-stack-lg p-stack-md bg-surface-container-low rounded-lg border border-outline-variant/30 flex items-start gap-stack-sm text-left max-w-md transition-all hover:bg-surface-container">
+<span class="material-symbols-outlined text-tertiary mt-0.5" style="font-variation-settings: 'FILL' 1;">info</span>
+<div>
+<span class="text-label-md font-label-md font-bold text-tertiary-container block uppercase tracking-wider mb-1">Pro Tip</span>
+<p class="text-body-md font-body-md text-on-secondary-container">
+                        Users with a CIBIL score above 750 typically see 15+ premium card recommendations instantly.
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile py-stack-lg text-center flex flex-col items-center gap-stack-sm bg-background border-t border-outline-variant dark:border-outline">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary text-sm">shield_with_heart</span>
+<span class="text-label-md font-label-md text-secondary">Secured by Industry Standards</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-lg">
+            Simulated recommendations for demonstration purposes only.
+        </p>
+<div class="flex gap-4 mt-2">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Terms of Service</a>
+<span class="text-outline-variant">•</span>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a>
+</div>
+<div class="mt-4 text-label-md font-label-md text-secondary opacity-60">
+            © 2024 Credit Card Advisor. All rights reserved.
+        </div>
+</footer>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface shadow-lg flex justify-around items-center py-3 border-t border-outline-variant z-50">
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="text-[10px] font-medium">Advisor</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-medium">Profile</span>
+</div>
+</nav>
+<script>
+        // Micro-interaction for the illustration
+        document.addEventListener('mousemove', (e) => {
+            const illustration = document.querySelector('img[data-alt]');
+            if (!illustration) return;
+            
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+            
+            illustration.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Reset transform when mouse leaves
+        document.addEventListener('mouseleave', () => {
+            const illustration = document.querySelector('img[data-alt]');
+            if (illustration) {
+                illustration.style.transform = `rotateY(0deg) rotateX(0deg)`;
+            }
+        });
+    </script>
+</body></html>

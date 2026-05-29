@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#0d1c32",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-container": "#d2e0fe",
+                        "on-primary-fixed-variant": "#832600",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "primary-container": "#ff6b35",
+                        "on-primary-container": "#5f1900",
+                        "primary-fixed": "#ffdbd0",
+                        "surface-dim": "#d3daea",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#e1bfb5",
+                        "background": "#f9f9ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#55637d",
+                        "primary": "#ab3500",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#dce2f3",
+                        "inverse-primary": "#ffb59d",
+                        "surface-container-low": "#f0f3ff",
+                        "primary-fixed-dim": "#ffb59d",
+                        "error": "#ba1a1a",
+                        "on-background": "#151c27",
+                        "surface-tint": "#ab3500",
+                        "secondary-fixed": "#d6e3ff",
+                        "outline": "#8d7168",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#dce2f3",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-tertiary-fixed": "#002113",
+                        "surface-container-high": "#e2e8f8",
+                        "surface-bright": "#f9f9ff",
+                        "secondary": "#515f78",
+                        "inverse-surface": "#2a313d",
+                        "tertiary-container": "#00af79",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "on-surface-variant": "#594139",
+                        "on-primary-fixed": "#390c00",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#006c49"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["DM Sans"],
+                        "headline-lg-mobile": ["DM Sans"],
+                        "headline-md": ["DM Sans"],
+                        "body-md": ["DM Sans"],
+                        "body-lg": ["DM Sans"],
+                        "label-md": ["DM Sans"],
+                        "button-text": ["DM Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "button-text": ["16px", {"lineHeight": "20px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .animate-shimmer {
+            background: linear-gradient(90deg, #f0f3ff 25%, #e2e8f8 50%, #f0f3ff 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite linear;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.33); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .animate-pulse-ring::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 9999px;
+            background-color: #ff6b35;
+            animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<header class="bg-surface shadow-sm sticky top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-headline-md">account_balance</span>
+<span class="text-headline-md font-headline-md font-bold text-secondary">Credit Card Advisor</span>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<span class="text-label-md font-label-md text-on-surface-variant hover:bg-surface-variant transition-colors px-2 py-1 rounded cursor-pointer">Recommendations</span>
+<span class="text-label-md font-label-md text-on-surface-variant hover:bg-surface-variant transition-colors px-2 py-1 rounded cursor-pointer">My Spending</span>
+<span class="text-label-md font-label-md text-on-surface-variant hover:bg-surface-variant transition-colors px-2 py-1 rounded cursor-pointer">Security</span>
+</nav>
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-primary font-bold px-2 py-1">Advisor Active</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="fixed inset-0 z-40 bg-surface/80 backdrop-blur-sm flex flex-col items-center justify-center pointer-events-none">
+<div class="relative flex items-center justify-center w-16 h-16 animate-pulse-ring">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-on-primary-container animate-spin" style="font-variation-settings: 'wght' 700;">sync</span>
+</div>
+</div>
+<p class="mt-stack-lg text-headline-md font-headline-md text-on-surface-variant animate-pulse text-center max-w-xs">
+                Analyzing your spend and matching Axis Bank cards...
+            </p>
+</div>
+<div class="w-full max-w-4xl space-y-stack-lg opacity-40 select-none pointer-events-none">
+<div class="flex flex-col gap-stack-sm">
+<div class="h-8 w-48 rounded-lg animate-shimmer"></div>
+<div class="h-4 w-72 rounded-lg animate-shimmer"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col gap-stack-md">
+<div class="flex justify-between items-start">
+<div class="w-16 h-10 rounded-lg animate-shimmer"></div>
+<div class="w-12 h-5 rounded-full animate-shimmer"></div>
+</div>
+<div class="space-y-2">
+<div class="h-6 w-3/4 rounded-lg animate-shimmer"></div>
+<div class="h-4 w-1/2 rounded-lg animate-shimmer"></div>
+</div>
+<div class="space-y-3 mt-4">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-full animate-shimmer"></div>
+<div class="h-3 w-full rounded-lg animate-shimmer"></div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-full animate-shimmer"></div>
+<div class="h-3 w-5/6 rounded-lg animate-shimmer"></div>
+</div>
+</div>
+<div class="mt-auto pt-stack-md border-t border-outline-variant/20">
+<div class="h-10 w-full rounded-xl animate-shimmer"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col gap-stack-md">
+<div class="flex justify-between items-start">
+<div class="w-16 h-10 rounded-lg animate-shimmer"></div>
+<div class="w-12 h-5 rounded-full animate-shimmer"></div>
+</div>
+<div class="space-y-2">
+<div class="h-6 w-3/4 rounded-lg animate-shimmer"></div>
+<div class="h-4 w-1/2 rounded-lg animate-shimmer"></div>
+</div>
+<div class="space-y-3 mt-4">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-full animate-shimmer"></div>
+<div class="h-3 w-full rounded-lg animate-shimmer"></div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-full animate-shimmer"></div>
+<div class="h-3 w-5/6 rounded-lg animate-shimmer"></div>
+</div>
+</div>
+<div class="mt-auto pt-stack-md border-t border-outline-variant/20">
+<div class="h-10 w-full rounded-xl animate-shimmer"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-stack-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col gap-stack-md">
+<div class="flex justify-between items-start">
+<div class="w-16 h-10 rounded-lg animate-shimmer"></div>
+<div class="w-12 h-5 rounded-full animate-shimmer"></div>
+</div>
+<div class="space-y-2">
+<div class="h-6 w-3/4 rounded-lg animate-shimmer"></div>
+<div class="h-4 w-1/2 rounded-lg animate-shimmer"></div>
+</div>
+<div class="space-y-3 mt-4">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-full animate-shimmer"></div>
+<div class="h-3 w-full rounded-lg animate-shimmer"></div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-full animate-shimmer"></div>
+<div class="h-3 w-5/6 rounded-lg animate-shimmer"></div>
+</div>
+</div>
+<div class="mt-auto pt-stack-md border-t border-outline-variant/20">
+<div class="h-10 w-full rounded-xl animate-shimmer"></div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mt-stack-lg">
+<div class="h-48 rounded-xl animate-shimmer border border-outline-variant/30"></div>
+<div class="h-48 rounded-xl animate-shimmer border border-outline-variant/30"></div>
+</div>
+</div>
+</main>
+<footer class="bg-background border-t border-outline-variant w-full px-margin-mobile py-stack-lg text-center flex flex-col items-center gap-stack-sm">
+<div class="text-label-md font-label-md text-secondary">
+            Simulated recommendations for demonstration purposes only.
+        </div>
+<div class="flex gap-4">
+<span class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Terms of Service</span>
+<span class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Privacy Policy</span>
+</div>
+<div class="mt-stack-sm text-[10px] uppercase tracking-widest text-outline">
+            © 2024 FINTECH SOLUTIONS
+        </div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const messages = [
+                "Scanning recent transactions...",
+                "Calculating reward maximization...",
+                "Optimizing for low interest...",
+                "Fetching Axis Bank exclusive offers...",
+                "Matching travel preferences..."
+            ];
+            let index = 0;
+            const textElement = document.querySelector('p.animate-pulse');
+            
+            setInterval(() => {
+                index = (index + 1) % messages.length;
+                textElement.style.opacity = '0';
+                setTimeout(() => {
+                    textElement.textContent = messages[index];
+                    textElement.style.opacity = '1';
+                }, 500);
+            }, 3000);
+        });
+    </script>
+</body></html>

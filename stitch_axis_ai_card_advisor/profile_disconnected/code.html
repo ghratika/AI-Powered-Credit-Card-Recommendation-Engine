@@ -1,0 +1,296 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Credit Card Advisor | Axis Bank</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#0d1c32",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary-container": "#d2e0fe",
+                        "on-primary-fixed-variant": "#832600",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "primary-container": "#ff6b35",
+                        "on-tertiary-container": "#003a25",
+                        "surface": "#f9f9ff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "on-primary-container": "#5f1900",
+                        "primary-fixed": "#ffdbd0",
+                        "surface-dim": "#d3daea",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#e1bfb5",
+                        "background": "#f9f9ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#55637d",
+                        "primary": "#ab3500",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#dce2f3",
+                        "inverse-primary": "#ffb59d",
+                        "surface-container-low": "#f0f3ff",
+                        "primary-fixed-dim": "#ffb59d",
+                        "error": "#ba1a1a",
+                        "on-background": "#151c27",
+                        "surface-tint": "#ab3500",
+                        "secondary-fixed": "#d6e3ff",
+                        "outline": "#8d7168",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#dce2f3",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-tertiary-fixed": "#002113",
+                        "surface-container-high": "#e2e8f8",
+                        "surface-bright": "#f9f9ff",
+                        "secondary": "#515f78",
+                        "inverse-surface": "#2a313d",
+                        "tertiary-container": "#00af79",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#151c27",
+                        "surface-container": "#e7eefe",
+                        "on-surface-variant": "#594139",
+                        "on-primary-fixed": "#390c00",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#006c49"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "margin-desktop": "32px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["DM Sans"],
+                        "headline-lg-mobile": ["DM Sans"],
+                        "headline-md": ["DM Sans"],
+                        "body-md": ["DM Sans"],
+                        "body-lg": ["DM Sans"],
+                        "label-md": ["DM Sans"],
+                        "button-text": ["DM Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "button-text": ["16px", {"lineHeight": "20px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-soft {
+            box-shadow: 0px 4px 12px rgba(10, 25, 47, 0.05);
+        }
+        .shadow-active {
+            box-shadow: 0px 8px 24px rgba(10, 25, 47, 0.10);
+        }
+        input:focus {
+            outline: none;
+            border-color: #0a192f !important;
+            ring: 0 !important;
+        }
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #ff6b35;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
+<!-- TopAppBar -->
+<nav class="bg-surface dark:bg-inverse-surface flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 z-50 fixed top-0 docked full-width shadow-sm dark:shadow-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" style="font-size: 28px;">account_balance</span>
+<span class="text-headline-md font-headline-md font-bold text-secondary dark:text-secondary-fixed">Credit Card Advisor</span>
+</div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-primary font-bold text-label-md font-label-md hover:bg-surface-variant transition-colors p-2 rounded-lg" href="#">Home</a>
+<a class="text-on-surface-variant text-label-md font-label-md hover:bg-surface-variant transition-colors p-2 rounded-lg" href="#">Cards</a>
+<a class="text-on-surface-variant text-label-md font-label-md hover:bg-surface-variant transition-colors p-2 rounded-lg" href="#">Offers</a>
+</div>
+</nav>
+<main class="pt-24 pb-12 px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto min-h-screen">
+<!-- Hero Section -->
+<header class="mb-stack-lg text-center md:text-left">
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-surface mb-2">Find your best Axis Bank credit card</h1>
+<p class="text-body-lg font-body-lg text-secondary max-w-2xl">Personalized AI recommendations based on your actual spending patterns.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg">
+<!-- Main Form Card -->
+<section class="lg:col-span-7 bg-white p-6 rounded-xl shadow-soft border border-outline-variant/30">
+<form class="space-y-stack-md">
+<!-- Income Input -->
+<div>
+<label class="text-label-md font-bold uppercase text-on-surface-variant block mb-2">Annual Income (₹)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-secondary font-medium">₹</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-outline-variant bg-white text-body-lg focus:border-on-background transition-all" placeholder="Enter amount" type="number">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- PAN Number -->
+<div>
+<label class="text-label-md font-bold uppercase text-on-surface-variant block mb-2">PAN Number</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white text-body-lg focus:border-on-background transition-all uppercase tracking-widest" placeholder="AAAAA9999A" type="text">
+</div>
+<!-- Mobile Number -->
+<div>
+<label class="text-label-md font-bold uppercase text-on-surface-variant block mb-2">Mobile Number</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-white text-body-lg focus:border-on-background transition-all" maxlength="10" placeholder="10 digits" type="tel">
+</div>
+</div>
+<!-- CIBIL Slider -->
+
+<div class="pt-stack-md">
+<button class="w-full bg-primary-container text-white font-button-text py-4 rounded-xl opacity-40 cursor-not-allowed transition-all shadow-soft flex items-center justify-center gap-2" disabled="" type="button">
+                            Get Recommendations
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Account Aggregator Bento Box -->
+<section class="lg:col-span-5 flex flex-col gap-stack-md">
+<!-- AA Connect Card -->
+<div class="bg-on-secondary-fixed text-white p-6 rounded-xl shadow-soft h-full flex flex-col justify-between relative overflow-hidden">
+<!-- Subtle Background Decoration -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-tertiary-container opacity-10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full mb-4">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" style="font-size: 18px;">security</span>
+<span class="text-label-md text-tertiary-fixed-dim font-bold">SECURE CONNECT</span>
+</div>
+<h2 class="text-headline-md font-headline-md mb-2">Account Aggregator</h2>
+<p class="text-body-md text-secondary-fixed-dim leading-relaxed">
+                            Connect securely to analyze your spending patterns automatically. Get 100% accurate card matching based on your real cash flows.
+                        </p>
+</div>
+<div class="mt-stack-lg relative z-10">
+<button class="w-full bg-[#FF6B35] hover:bg-primary text-white font-button-text py-4 rounded-xl transition-all shadow-lg active:scale-[0.98] flex items-center justify-center gap-2" onclick="handleAAConnect()">
+<span class="material-symbols-outlined">link</span>
+                            Connect Account Aggregator
+                        </button>
+<div class="mt-4 flex flex-col items-center gap-1">
+<p class="text-[10px] uppercase tracking-tighter text-secondary-fixed-dim font-bold text-center">
+                                Powered by AI · Axis Bank cards only
+                            </p>
+</div>
+</div>
+</div>
+<!-- Trust Badges / Stats -->
+<div class="grid grid-cols-2 gap-stack-sm">
+<div class="bg-white p-4 rounded-xl border border-outline-variant/30 shadow-soft flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-tertiary mb-2" style="font-size: 24px;">bolt</span>
+<span class="text-label-md font-bold text-on-surface">98% Match</span>
+<p class="text-[10px] text-secondary">AI Accuracy</p>
+</div>
+<div class="bg-white p-4 rounded-xl border border-outline-variant/30 shadow-soft flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-tertiary mb-2" style="font-size: 24px;">verified_user</span>
+<span class="text-label-md font-bold text-on-surface">ISO Certified</span>
+<p class="text-[10px] text-secondary">Data Encryption</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Atmospheric Image/Visual -->
+<div class="mt-stack-lg w-full h-48 md:h-64 rounded-xl overflow-hidden relative shadow-soft">
+<img class="w-full h-full object-cover grayscale-[0.5] hover:grayscale-0 transition-all duration-700" data-alt="A sophisticated macro shot of a sleek modern credit card with metallic accents resting on a dark marble surface. The lighting is dramatic and premium, with soft amber glows reflecting off the edges of the card, conveying a sense of exclusivity and financial growth. The overall aesthetic is professional and corporate, utilizing a color palette of deep navy and vibrant orange sparks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtejWtYNfRj4kMMv61kJnWfAhWbn-cD6qtq8zeQTkPUog2-iwQrgBtDSSdcxnTtl1heC5yB818jPk2jZsaUr4KcWHVpIV4bL9VCzwubIrMuuonGlLg1NIt9FaR9FbUaXuTp-59swuS37RzXZgmBNSN0YMgO9lLLzX2YPjlWI5RIP3ZRHwCOGF7_wJpmcwukgG-kXBjOGOAhs6HSUd0o3Zxf1ESbBMEKsG4zrpslVSn7jDAwDNBFInlte_qbm_WSed2rMApmjKsgzk">
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent flex items-end p-8">
+<p class="text-white text-body-lg font-bold">Discover the power of data-driven rewards.</p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile py-stack-lg text-center flex flex-col items-center gap-stack-sm bg-background border-t border-outline-variant dark:border-outline">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary" style="font-size: 20px;">account_balance</span>
+<span class="text-label-md font-label-md text-secondary font-bold">Axis Bank Advisor</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-md">Simulated recommendations for demonstration purposes only.</p>
+<div class="flex gap-4 mt-2">
+<a class="text-on-surface-variant text-label-md font-label-md hover:text-primary transition-colors cursor-pointer" href="#">Terms of Service</a>
+<a class="text-on-surface-variant text-label-md font-label-md hover:text-primary transition-colors cursor-pointer" href="#">Privacy Policy</a>
+</div>
+</footer>
+<script>
+        // Micro-interactions
+        const slider = document.getElementById('cibil-slider');
+        const output = document.getElementById('cibil-value');
+        
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+            // Visual feedback for score
+            if(this.value < 600) output.style.color = '#ba1a1a';
+            else if(this.value < 750) output.style.color = '#ab3500';
+            else output.style.color = '#006c49';
+        }
+
+        function handleAAConnect() {
+            // Simulated interaction
+            const btn = event.currentTarget;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Connecting...';
+            btn.style.opacity = '0.8';
+            
+            setTimeout(() => {
+                alert("This would trigger the Account Aggregator (AA) secure consent flow.");
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Connected';
+                btn.classList.remove('bg-[#FF6B35]');
+                btn.classList.add('bg-tertiary');
+                
+                // Enable the main CTA
+                const mainCta = document.querySelector('button[disabled]');
+                mainCta.disabled = false;
+                mainCta.classList.remove('opacity-40', 'cursor-not-allowed');
+                mainCta.classList.add('hover:shadow-active', 'active:scale-[0.98]');
+            }, 1500);
+        }
+
+        // Form focus effects
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.closest('div').classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.closest('div').classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+
+
+</body></html>

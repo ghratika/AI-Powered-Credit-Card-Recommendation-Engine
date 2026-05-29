@@ -1,0 +1,25 @@
+{
+  "user_ref": "persona-dining-heavy",
+  "transactions": [
+    { "date": "2025-04-05", "amount_inr": 8500, "category": "dining", "merchant": "Swiggy", "type": "debit" },
+    { "date": "2025-04-12", "amount_inr": 7200, "category": "dining", "merchant": "Zomato", "type": "debit" },
+    { "date": "2025-04-20", "amount_inr": 1200, "category": "utilities", "merchant": "BESCOM", "type": "debit" },
+    { "date": "2025-05-03", "amount_inr": 9100, "category": "dining", "merchant": "Eatfit", "type": "debit" },
+    { "date": "2025-05-15", "amount_inr": 6800, "category": "dining", "merchant": "Dominos", "type": "debit" },
+    { "date": "2025-05-28", "amount_inr": 1500, "category": "fuel", "merchant": "Indian Oil", "type": "debit" },
+    { "date": "2025-06-08", "amount_inr": 10200, "category": "dining", "merchant": "Swiggy", "type": "debit" },
+    { "date": "2025-06-22", "amount_inr": 7800, "category": "dining", "merchant": "Zomato", "type": "debit" },
+    { "date": "2025-07-05", "amount_inr": 8900, "category": "dining", "merchant": "Cafe", "type": "debit" },
+    { "date": "2025-07-18", "amount_inr": 1100, "category": "utilities", "merchant": "Airtel", "type": "debit" },
+    { "date": "2025-08-02", "amount_inr": 9500, "category": "dining", "merchant": "Swiggy", "type": "debit" },
+    { "date": "2025-08-25", "amount_inr": 8200, "category": "dining", "merchant": "Zomato", "type": "debit" },
+    { "date": "2025-09-10", "amount_inr": 7600, "category": "dining", "merchant": "Eatfit", "type": "debit" },
+    { "date": "2025-09-28", "amount_inr": 2000, "category": "shopping", "merchant": "Amazon", "type": "debit" },
+    { "date": "2025-10-14", "amount_inr": 10800, "category": "dining", "merchant": "Swiggy", "type": "debit" },
+    { "date": "2025-11-06", "amount_inr": 9200, "category": "dining", "merchant": "Zomato", "type": "debit" },
+    { "date": "2025-12-01", "amount_inr": 8800, "category": "dining", "merchant": "Dominos", "type": "debit" },
+    { "date": "2026-01-12", "amount_inr": 10100, "category": "dining", "merchant": "Swiggy", "type": "debit" },
+    { "date": "2026-02-20", "amount_inr": 7900, "category": "dining", "merchant": "Zomato", "type": "debit" },
+    { "date": "2026-03-15", "amount_inr": 9300, "category": "dining", "merchant": "Eatfit", "type": "debit" }
+  ]
+}
