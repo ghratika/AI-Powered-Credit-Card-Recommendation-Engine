@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AppFooter } from "./AppFooter";
 import { AppHeader } from "./AppHeader";
 import "./LoadingView.css";
@@ -46,17 +46,15 @@ function SkeletonCard() {
 export function LoadingView() {
   const [message, setMessage] = useState(INITIAL_MESSAGE);
   const [messageVisible, setMessageVisible] = useState(true);
-  const [rotateIndex, setRotateIndex] = useState(0);
+  const rotateIndexRef = useRef(0);
 
   useEffect(() => {
     const id = window.setInterval(() => {
       setMessageVisible(false);
       window.setTimeout(() => {
-        setRotateIndex((i) => {
-          const next = i % ROTATING_MESSAGES.length;
-          setMessage(ROTATING_MESSAGES[next]);
-          return next + 1;
-        });
+        const next = rotateIndexRef.current % ROTATING_MESSAGES.length;
+        setMessage(ROTATING_MESSAGES[next]);
+        rotateIndexRef.current = next + 1;
         setMessageVisible(true);
       }, 500);
     }, MESSAGE_INTERVAL_MS);

@@ -31,6 +31,14 @@ def test_health(client: TestClient) -> None:
     assert response.json()["status"] in {"ok", "degraded"}
 
 
+def test_root(client: TestClient) -> None:
+    response = client.get("/")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "running"
+    assert data["health"] == "/api/v1/health"
+
+
 def test_aa_connect(client: TestClient) -> None:
     response = client.post("/api/v1/aa/connect")
     assert response.status_code == 200

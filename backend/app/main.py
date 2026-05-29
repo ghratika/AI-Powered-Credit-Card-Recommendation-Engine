@@ -74,6 +74,19 @@ async def request_logging_middleware(request: Request, call_next):
 
 register_exception_handlers(app)
 
+
+@app.get("/")
+def root() -> dict[str, str]:
+    """Landing page when visiting the Railway host in a browser."""
+    return {
+        "service": "AI Credit Card Recommendation API",
+        "status": "running",
+        "health": "/api/v1/health",
+        "docs": "/docs",
+        "recommendations": "POST /api/v1/recommendations",
+    }
+
+
 app.include_router(health.router, prefix="/api/v1")
 app.include_router(aa.router, prefix="/api/v1")
 app.include_router(recommendations.router, prefix="/api/v1")

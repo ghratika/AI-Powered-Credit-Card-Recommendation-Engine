@@ -30,8 +30,13 @@ Browser → Vercel (static React) → Railway (FastAPI + Groq + data/)
 | `LOG_FORMAT` | No | `json` |
 | `TOP_N_RECOMMENDATIONS` | No | `3` |
 
-5. Deploy and copy the public URL (e.g. `https://credit-card-api-production.up.railway.app`).
-6. Verify: `GET https://<railway-host>/api/v1/health` → `{"status":"ok"}`.
+5. Deploy and copy the public URL (e.g. `https://ai-powered-credit-card-recommendation-engine-production.up.railway.app`).
+6. Verify (do **not** use the bare domain root alone before the root route exists):
+   - `GET https://<railway-host>/api/v1/health` → `{"status":"ok"}`
+   - `GET https://<railway-host>/` → service info JSON
+   - `https://<railway-host>/docs` → Swagger UI
+
+Visiting only `https://<railway-host>/` on older deploys without a root route returned `{"detail":"Not Found"}` — that is normal; the API lives under `/api/v1/`.
 
 **Note:** `CARDS_DATA_PATH` and `AA_DATA_PATH` default to `/app/data/...` inside the Docker image. Do not change unless you mount custom data.
 
