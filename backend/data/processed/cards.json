@@ -1,0 +1,121 @@
+[
+  {
+    "id": "axis-neo",
+    "name": "Axis Bank Neo Credit Card",
+    "image_url": "/assets/cards/axis-bank-neo-credit-card.png",
+    "annual_fee_inr": 0,
+    "apr_percent": 52.0,
+    "min_income_inr": 250000,
+    "min_cibil": 650,
+    "reward_categories": [
+      { "category": "shopping", "rate_percent": 10, "monthly_cap_inr": 1000 }
+    ],
+    "default_earn_rate_percent": 1.0,
+    "highlights": ["10% off on partner brands", "Zero annual fee"]
+  },
+  {
+    "id": "axis-magnus-lite",
+    "name": "Axis Bank Magnus Credit Card (Lite)",
+    "image_url": "/assets/cards/axis-bank-magnus-credit-card.png",
+    "annual_fee_inr": 0,
+    "apr_percent": 42.0,
+    "min_income_inr": 600000,
+    "min_cibil": 700,
+    "reward_categories": [
+      { "category": "travel", "rate_percent": 5, "monthly_cap_inr": 2000 },
+      { "category": "dining", "rate_percent": 3, "monthly_cap_inr": 1500 }
+    ],
+    "default_earn_rate_percent": 2.0,
+    "highlights": ["Accelerated travel and dining rewards", "Complimentary lounge visits"]
+  },
+  {
+    "id": "axis-flipkart",
+    "name": "Axis Bank Flipkart Credit Card",
+    "image_url": "/assets/cards/axis-bank-flipkart-credit-card.png",
+    "annual_fee_inr": 500,
+    "apr_percent": 44.0,
+    "min_income_inr": 300000,
+    "min_cibil": 700,
+    "reward_categories": [
+      { "category": "shopping", "rate_percent": 5, "monthly_cap_inr": 4000 },
+      { "category": "dining", "rate_percent": 4, "monthly_cap_inr": 2000 }
+    ],
+    "default_earn_rate_percent": 1.5,
+    "highlights": ["5% cashback on Flipkart", "4% on preferred partners"]
+  },
+  {
+    "id": "axis-my-zone",
+    "name": "Axis Bank My Zone Credit Card",
+    "image_url": "/assets/cards/axis-my-zone.svg",
+    "annual_fee_inr": 0,
+    "apr_percent": 46.0,
+    "min_income_inr": 200000,
+    "min_cibil": 680,
+    "reward_categories": [
+      { "category": "dining", "rate_percent": 4, "monthly_cap_inr": 1200 },
+      { "category": "shopping", "rate_percent": 2, "monthly_cap_inr": 1000 }
+    ],
+    "default_earn_rate_percent": 1.0,
+    "highlights": ["Dining and movie benefits", "Lifetime free variant available"]
+  },
+  {
+    "id": "axis-ace",
+    "name": "Axis Bank ACE Credit Card",
+    "image_url": "/assets/cards/axis-ace.svg",
+    "annual_fee_inr": 499,
+    "apr_percent": 42.0,
+    "min_income_inr": 600000,
+    "min_cibil": 750,
+    "reward_categories": [
+      { "category": "utilities", "rate_percent": 5, "monthly_cap_inr": 500 },
+      { "category": "dining", "rate_percent": 4, "monthly_cap_inr": 1000 }
+    ],
+    "default_earn_rate_percent": 1.5,
+    "highlights": ["5% on bill pay utilities", "4% on food delivery"]
+  },
+  {
+    "id": "axis-vistara",
+    "name": "Axis Bank Vistara Credit Card",
+    "image_url": "/assets/cards/axis-vistara.svg",
+    "annual_fee_inr": 1500,
+    "apr_percent": 42.0,
+    "min_income_inr": 600000,
+    "min_cibil": 750,
+    "reward_categories": [
+      { "category": "travel", "rate_percent": 6, "monthly_cap_inr": 3000 },
+      { "category": "dining", "rate_percent": 2, "monthly_cap_inr": 500 }
+    ],
+    "default_earn_rate_percent": 2.0,
+    "highlights": ["Vistara Club points on travel", "Milestone flight benefits"]
+  },
+  {
+    "id": "axis-magnus",
+    "name": "Axis Bank Magnus Credit Card",
+    "image_url": "/assets/cards/axis-magnus.svg",
+    "annual_fee_inr": 12500,
+    "apr_percent": 42.0,
+    "min_income_inr": 1800000,
+    "min_cibil": 750,
+    "reward_categories": [
+      { "category": "travel", "rate_percent": 8, "monthly_cap_inr": 5000 },
+      { "category": "dining", "rate_percent": 5, "monthly_cap_inr": 3000 }
+    ],
+    "default_earn_rate_percent": 3.0,
+    "highlights": ["Premium travel rewards", "Golf and concierge privileges"]
+  },
+  {
+    "id": "axis-reserve",
+    "name": "Axis Bank Reserve Credit Card",
+    "image_url": "/assets/cards/axis-reserve.svg",
+    "annual_fee_inr": 50000,
+    "apr_percent": 42.0,
+    "min_income_inr": 2400000,
+    "min_cibil": 800,
+    "reward_categories": [
+      { "category": "travel", "rate_percent": 10, "monthly_cap_inr": 10000 },
+      { "category": "shopping", "rate_percent": 5, "monthly_cap_inr": 5000 }
+    ],
+    "default_earn_rate_percent": 3.5,
+    "highlights": ["Ultra-premium lifestyle benefits", "Unlimited lounge access"]
+  }
+]
