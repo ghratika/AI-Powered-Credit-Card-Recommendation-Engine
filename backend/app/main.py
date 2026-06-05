@@ -7,7 +7,7 @@ import time
 import uuid
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.errors import register_exception_handlers
@@ -38,20 +38,10 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-_cors_kwargs: dict = {
-    "allow_credentials": True,
-    "allow_methods": ["*"],
-    "allow_headers": ["*"],
-}
-_origin_regex = get_cors_origin_regex()
-if _origin_regex:
-    _cors_kwargs["allow_origin_regex"] = _origin_regex
-    _cors_kwargs["allow_origins"] = get_cors_origins()
-else:
-    _cors_kwargs["allow_origins"] = get_cors_origins()
-
-app.add_middleware(CORSMiddleware, **_cors_kwargs)
-
+# ---- Logging middleware must be added FIRST so that CORSMiddleware (added
+# after) becomes the OUTERMOST layer in Starlette's middleware stack.
+# Starlette wraps middleware in reverse-registration order: last added = outermost.
+# CORS must be outermost so it can intercept OPTIONS preflight before anything else.
 
 @app.middleware("http")
 async def request_logging_middleware(request: Request, call_next):
@@ -72,6 +62,21 @@ async def request_logging_middleware(request: Request, call_next):
     return response
 
 
+# ---- CORSMiddleware added LAST → outermost → handles OPTIONS preflight first.
+_cors_kwargs: dict = {
+    "allow_credentials": True,
+    "allow_methods": ["*"],
+    "allow_headers": ["*"],
+}
+_origin_regex = get_cors_origin_regex()
+if _origin_regex:
+    _cors_kwargs["allow_origin_regex"] = _origin_regex
+    _cors_kwargs["allow_origins"] = get_cors_origins()
+else:
+    _cors_kwargs["allow_origins"] = get_cors_origins()
+
+app.add_middleware(CORSMiddleware, **_cors_kwargs)
+
 register_exception_handlers(app)
 
 
@@ -90,3 +95,4 @@ def root() -> dict[str, str]:
 app.include_router(health.router, prefix="/api/v1")
 app.include_router(aa.router, prefix="/api/v1")
 app.include_router(recommendations.router, prefix="/api/v1")
+
