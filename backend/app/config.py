@@ -90,22 +90,22 @@ def use_llm_mock() -> bool:
 
 
 def get_cors_origins() -> list[str]:
-    raw = os.getenv(
-        "CORS_ORIGINS",
-        "http://localhost:5173,http://127.0.0.1:5173,"
-        "https://ai-powered-credit-card-recommendati-lac.vercel.app",
-    )
+    """Return allowed CORS origins from the ``CORS_ORIGINS`` env var.
+
+    Set ``CORS_ORIGINS`` as a comma-separated list on Railway, e.g.:
+    ``https://your-frontend.vercel.app,http://localhost:5173``
+    """
+    raw = os.getenv("CORS_ORIGINS", "")
     return [origin.strip() for origin in raw.split(",") if origin.strip()]
 
 
 def get_cors_origin_regex() -> str | None:
-    """Optional regex for preview deploys (e.g. ``https://.*\\.vercel\\.app``).
+    """Optional regex for CORS origins from the ``CORS_ORIGIN_REGEX`` env var.
 
-    Defaults to matching all Vercel deployments so the backend works with
-    Vercel out-of-the-box without requiring an explicit env var on Railway.
-    Override by setting ``CORS_ORIGIN_REGEX`` to an empty string to disable.
+    Useful for matching preview deploys, e.g.:
+    ``https://.*\\.vercel\\.app``
     """
-    raw = os.getenv("CORS_ORIGIN_REGEX", "https://.*\\.vercel\\.app").strip()
+    raw = os.getenv("CORS_ORIGIN_REGEX", "").strip()
     return raw or None
 
 
