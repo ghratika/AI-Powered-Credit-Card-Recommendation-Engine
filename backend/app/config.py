@@ -95,8 +95,13 @@ def get_cors_origins() -> list[str]:
 
 
 def get_cors_origin_regex() -> str | None:
-    """Optional regex for preview deploys (e.g. ``https://.*\\.vercel\\.app``)."""
-    raw = os.getenv("CORS_ORIGIN_REGEX", "").strip()
+    """Optional regex for preview deploys (e.g. ``https://.*\\.vercel\\.app``).
+
+    Defaults to matching all Vercel deployments so the backend works with
+    Vercel out-of-the-box without requiring an explicit env var on Railway.
+    Override by setting ``CORS_ORIGIN_REGEX`` to an empty string to disable.
+    """
+    raw = os.getenv("CORS_ORIGIN_REGEX", "https://.*\\.vercel\\.app").strip()
     return raw or None
 
 
