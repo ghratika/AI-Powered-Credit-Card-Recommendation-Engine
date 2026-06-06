@@ -70,7 +70,7 @@ export function apiErrorMessage(error: unknown): string {
       case 400:
         return error.message || "Please check your profile details.";
       case 422:
-        return "Connect Account Aggregator before requesting recommendations.";
+        return "Please fetch your bank statements first to get personalized recommendations.";
       case 404:
         return error.message || "No eligible cards for your profile.";
       case 502:

@@ -132,7 +132,7 @@ export function ProfileForm({
           )}
         </button>
         {!aaConnected && (
-          <p className="profile-form__aa-hint">Connect Account Aggregator to enable recommendations.</p>
+          <p className="profile-form__aa-hint">Fetch your bank statements above to enable recommendations.</p>
         )}
       </form>
     </section>

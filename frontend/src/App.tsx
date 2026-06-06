@@ -64,7 +64,7 @@ export default function App() {
       return;
     }
     if (aaStatus !== "connected") {
-      setApiError("Connect Account Aggregator before requesting recommendations.");
+      setApiError("Please fetch your bank statements first to get personalized recommendations.");
       return;
     }
 

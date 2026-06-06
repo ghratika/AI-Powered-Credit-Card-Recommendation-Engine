@@ -20,10 +20,10 @@ export function AAConnectPanel({ status, spendProfileId, onConnect }: AAConnectP
             </span>
             <span>Secure Connect</span>
           </div>
-          <h2 className="aa-panel__title">Account Aggregator</h2>
+          <h2 className="aa-panel__title">Fetch Your Bank Statements</h2>
           <p className="aa-panel__text">
-            Connect securely to analyze your spending patterns automatically. Get accurate card
-            matching based on your real cash flows.
+            Securely pull your recent transactions in one click — no manual uploads needed.
+            We'll analyze your spending to find the perfect card for you.
           </p>
           {status === "connected" && spendProfileId && (
             <p className="aa-panel__connected">
@@ -61,7 +61,7 @@ export function AAConnectPanel({ status, spendProfileId, onConnect }: AAConnectP
                 <span className="material-symbols-outlined" aria-hidden="true">
                   link
                 </span>
-                Connect Account Aggregator
+                Fetch Statements Securely
               </>
             )}
           </button>
