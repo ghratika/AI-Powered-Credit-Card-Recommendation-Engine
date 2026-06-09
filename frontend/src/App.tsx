@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import { ApiClientError, apiErrorMessage, connectAa, getRecommendations } from "./api/client";
 import { LoadingView } from "./components/LoadingView";
 import { ProfilePage } from "./pages/ProfilePage";
@@ -113,43 +114,57 @@ export default function App() {
   }, []);
 
   if (view === "loading") {
-    return <LoadingView />;
+    return (
+      <>
+        <LoadingView />
+        <Analytics />
+      </>
+    );
   }
 
   if (view === "no_eligible") {
     return (
-      <NoEligiblePage
-        message={noEligibleMessage ?? undefined}
-        onEditProfile={handleEditProfile}
-      />
+      <>
+        <NoEligiblePage
+          message={noEligibleMessage ?? undefined}
+          onEditProfile={handleEditProfile}
+        />
+        <Analytics />
+      </>
     );
   }
 
   if (view === "results" && results) {
     const income = Number(form.annualIncome.replace(/,/g, "")) || 0;
     return (
-      <ResultsPage
-        recommendations={results.recommendations}
-        eligibleCount={results.meta.eligible_count}
-        disclaimer={results.meta.disclaimer}
-        annualIncomeInr={income}
-        onStartOver={handleStartOver}
-      />
+      <>
+        <ResultsPage
+          recommendations={results.recommendations}
+          eligibleCount={results.meta.eligible_count}
+          disclaimer={results.meta.disclaimer}
+          annualIncomeInr={income}
+          onStartOver={handleStartOver}
+        />
+        <Analytics />
+      </>
     );
   }
 
   return (
-    <ProfilePage
-      form={form}
-      fieldErrors={fieldErrors}
-      aaStatus={aaStatus}
-      spendProfileId={spendProfileId}
-      apiError={apiError}
-      submitting={false}
-      onFormChange={handleFormChange}
-      onConnectAa={handleConnectAa}
-      onSubmit={handleSubmit}
-      onDismissError={() => setApiError(null)}
-    />
+    <>
+      <ProfilePage
+        form={form}
+        fieldErrors={fieldErrors}
+        aaStatus={aaStatus}
+        spendProfileId={spendProfileId}
+        apiError={apiError}
+        submitting={false}
+        onFormChange={handleFormChange}
+        onConnectAa={handleConnectAa}
+        onSubmit={handleSubmit}
+        onDismissError={() => setApiError(null)}
+      />
+      <Analytics />
+    </>
   );
 }
